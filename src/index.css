@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@storybook /addon-postcss;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Ant */
+#root
+  > div
+  > div
+  > div.gap-6.flex.flex-col.w-full.h-full.bg-red-500.rounded.relative.overflow-auto.border-2.border-red-500
+  > div
+  > div
+  > div
+  > ul {
+  padding: 10px;
+  background-color: theme('colors.background');
+  margin: 0;
+}
+
+body {
+  background-color: theme('colors.secondary');
+}
+
+p,
+li {
+  @apply text-sm lg:text-base;
+}
+
+@layer components {
+  .link {
+    @apply text-primary underline;
+  }
+  .card {
+    @apply shadow-md rounded p-2 bg-background text-white;
+  }
+  .point {
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      background-color: theme('colors.primary');
+      border-radius: 50%;
+      margin-right: 5px;
+      margin-bottom: 3.5px;
+    }
+  }
+  .section {
+    @apply w-full p-4 h-screen flex flex-col overflow-hidden;
+  }
+
+  .code {
+    @apply border-primary border rounded font-mono text-primary p-2 text-sm lg:text-base;
+    &::after {
+      @apply w-2 h-7 ml-1 border-primary bg-primary animate-pulse;
+      content: '|';
+    }
+  }
+}

@@ -1,0 +1,29 @@
+import Anchor from 'antd/es/anchor/Anchor';
+
+const Navigation = () => {
+  return (
+    <div className="hidden lg:block w-2/12 h-fit card sticky top-2">
+      <Anchor
+        items={[
+          {
+            title: 'Introduction',
+            key: 'introduction',
+            href: '#introduction',
+          },
+          {
+            title: 'Getting Started',
+            key: 'starting',
+            href: '#starting',
+          },
+          {
+            title: 'Examples',
+            key: 'examples',
+            href: '#examples',
+          },
+        ]}
+      />
+    </div>
+  );
+};
+
+export default Navigation;
