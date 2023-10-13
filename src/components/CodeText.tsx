@@ -9,14 +9,14 @@ const CodeText = ({
     <code className={`code ${className}`}>
       {Array.isArray(children)
         ? children.map((element, i) => {
-            if (i === 0) {
-              return element;
+            const lastElement = children.length - 1;
+            if (i === 0 || i === lastElement) {
+              return <span key={element + i}>{element}</span>;
             }
             return (
-              <>
-                <br key={element} />
-                {element}
-              </>
+              <p key={`p-${element}-${i}`}>
+                <span>{element}</span>
+              </p>
             );
           })
         : children}

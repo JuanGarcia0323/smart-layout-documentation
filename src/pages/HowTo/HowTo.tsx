@@ -4,9 +4,7 @@ import ExampleHowTo from './BasicExampleLayout';
 const HowTo = () => {
   return (
     <div className="section h-auto" id="starting">
-      <h1 className="font-semibold text-3xl border-b border-primary font-">
-        Getting Started
-      </h1>
+      <h1 className="title">Getting Started</h1>
       <article className="flex flex-col gap-2 p-4 text-lg">
         <p>
           Embarking on the journey with Smart-layout? You're in for a treat!

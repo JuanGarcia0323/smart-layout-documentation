@@ -11,9 +11,7 @@ const ExampleForm = () => {
         <Input title="Mail"></Input>
         <Input title="Password"></Input>
       </div>
-      <button className="text-sm lg:text-base border-2 border-primary p-1 lg:p-2 rounded text-white hover:text-primary hover:border-secondary transition-colors duration-300 ease-in-out">
-        Create
-      </button>
+      <button className="button">Create</button>
     </div>
   );
 };

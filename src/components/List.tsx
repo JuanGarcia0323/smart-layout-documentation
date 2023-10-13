@@ -115,12 +115,15 @@ const exampleList = [
 
 const List = () => {
   return (
-    <div className="h-full w-full overflow-auto bg-background">
+    <div className="h-full w-full overflow-auto no-scrollbar bg-background">
       <ul className="flex flex-wrap flex-col gap-2">
         {exampleList.map((item) => {
           const { email, name, picture } = item;
           return (
-            <li className="flex flex-wrap items-center p-1 px-4 rounded gap-4 border-2 border-primary min-w-fit">
+            <li
+              className="flex flex-wrap items-center p-1 px-4 rounded gap-4 border-2 border-primary min-w-fit"
+              key={email}
+            >
               <Avatar src={picture.large} />
               <div className="flex flex-col">
                 <h1 className="font-mono text-primary">{name.first}</h1>

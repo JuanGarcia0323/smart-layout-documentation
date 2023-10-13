@@ -1,8 +1,11 @@
+import SavingLayouts from './SavingLayouts/SavingLayouts';
+
 const ExamplesSection = () => {
   return (
     <div className="section h-auto" id="examples">
-      <h1 className="font-semibold text-3xl border-b border-primary font-">
-        Smart-layout Examples: Your Guide & Cookbook
+      <h1 className="title">
+        <span className="text-primary">Smart</span> layout Examples: Your Guide
+        & Cookbook
       </h1>
       <article className="flex flex-col gap-2 p-4 text-lg">
         <p>
@@ -36,6 +39,7 @@ const ExamplesSection = () => {
           toolkit, propelling you towards web design mastery!
         </p>
       </article>
+      <SavingLayouts />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import Introduction from '@pages/Introduction/Introduction';
 import ExamplesSection from '@pages/Examples/Examples';
 import Donation from '@components/Donation';
 import Navigation from '@components/Navigation';
+import ButtonsConfig from '@components/ButtonsConfig';
 
 function Landing() {
   return (
@@ -14,6 +15,7 @@ function Landing() {
         <ExamplesSection />
       </div>
       <Donation />
+      <ButtonsConfig />
     </div>
   );
 }
