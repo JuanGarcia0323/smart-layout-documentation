@@ -58,9 +58,11 @@ li {
   .link {
     @apply text-primary underline;
   }
+
   .card {
     @apply shadow-md rounded p-2 bg-background text-white;
   }
+
   .point {
     &::before {
       content: '';
@@ -73,6 +75,7 @@ li {
       margin-bottom: 3.5px;
     }
   }
+
   .section {
     @apply w-full p-4 h-screen flex flex-col overflow-hidden;
   }

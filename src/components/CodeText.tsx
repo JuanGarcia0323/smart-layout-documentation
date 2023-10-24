@@ -1,24 +1,35 @@
 const CodeText = ({
   children,
   className,
+  split,
 }: {
-  children: string | string[];
+  children: string;
   className?: string;
+  split?: boolean;
 }) => {
   return (
     <code className={`code ${className}`}>
-      {Array.isArray(children)
-        ? children.map((element, i) => {
-            const lastElement = children.length - 1;
-            if (i === 0 || i === lastElement) {
-              return <span key={element + i}>{element}</span>;
-            }
-            return (
-              <p key={`p-${element}-${i}`}>
-                <span>{element}</span>
-              </p>
-            );
-          })
+      {split
+        ? children
+            .trim()
+            .split('\n')
+            .map((element, i) => {
+              const lastElement = children.split('\n').length - 1;
+              console.log('lastElement', lastElement);
+              console.log(i);
+              if (i === 0 || i === lastElement) {
+                console.log(element, i);
+                return <span key={element + i}>{`${element.trim()}`}</span>;
+              }
+              return (
+                <p key={`p-${element}-${i}`}>
+                  {element
+                    .split('  ')
+                    .map((e) => (e === '' ? '-' : ` ${e}`))
+                    .join('')}
+                </p>
+              );
+            })
         : children}
     </code>
   );

@@ -1,4 +1,4 @@
-import ExampleComponentLayout from '@components/ExampleComponentLayout';
+import CustomComponentLayout from '@components/CustomComponentLayout';
 import ExampleForm from '@components/ExampleForm';
 import List from '@components/List';
 import { customLayout } from 'smart-layout';
@@ -36,11 +36,11 @@ const layoutAdvanceExample: customLayout = {
 const ExampleHowTo = () => {
   return (
     <div className="w-full h-full">
-      <ExampleComponentLayout id="how-to-example" layout={layoutAdvanceExample}>
+      <CustomComponentLayout id="how-to-example" layout={layoutAdvanceExample}>
         <List></List>
         <div className="w-full h-full bg-primary"></div>
         <ExampleForm></ExampleForm>
-      </ExampleComponentLayout>
+      </CustomComponentLayout>
     </div>
   );
 };

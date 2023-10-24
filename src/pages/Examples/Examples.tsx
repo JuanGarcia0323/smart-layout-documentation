@@ -18,7 +18,7 @@ const ExamplesSection = () => {
           repository that you can frequently return to, borrowing code snippets,
           patterns, and entire solutions for your projects.
         </p>
-        <ul className="p-10">
+        <ul className="p-4">
           <li className="point">
             Guidance: Helping you understand the depths and nuances of
             Smart-layout.

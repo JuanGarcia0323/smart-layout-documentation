@@ -1,4 +1,4 @@
-import ExampleComponentLayout from '@components/ExampleComponentLayout';
+import CustomComponentLayout from '@components/CustomComponentLayout';
 import { customLayout } from 'smart-layout';
 
 const layoutExample: customLayout = {
@@ -76,12 +76,12 @@ const Introduction = () => {
           deep into the wonders of Smart-layout!
         </p>
       </article>
-      <ExampleComponentLayout id="Introducction" layout={layoutExample}>
+      <CustomComponentLayout id="Introducction" layout={layoutExample}>
         <div className="h-full w-full bg-primary rounded" />
         <div className="h-full w-full bg-primary rounded" />
         <div className="h-full w-full bg-primary rounded" />
         <div className="h-full w-full bg-primary rounded" />
-      </ExampleComponentLayout>
+      </CustomComponentLayout>
     </div>
   );
 };

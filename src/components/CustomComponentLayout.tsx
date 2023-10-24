@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { ComponentLayout, customLayout } from 'smart-layout';
 import Animation from '@sp-components/animation/Animation';
 import {
@@ -9,13 +9,13 @@ import {
 import { Tooltip } from 'antd';
 import config from '@config';
 
-const ExampleComponentLayout = ({
+const CustomComponentLayout = ({
   children,
   id,
   layout,
   tools,
 }: {
-  tools: ReactNode;
+  tools?: ReactNode;
   children: ReactNode;
   id: string;
   layout?: customLayout;
@@ -117,4 +117,4 @@ const ExampleComponentLayout = ({
   );
 };
 
-export default ExampleComponentLayout;
+export default CustomComponentLayout;

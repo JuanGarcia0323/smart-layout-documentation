@@ -24,7 +24,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           colorSuccess: config.colors.confirm,
           colorError: config.colors.error,
           colorTextBase: config.colors.text,
-          colorBgBase: '#fff',
+          colorBgBase: config.colors.background,
+          colorBorder: config.colors.primary,
         },
 
         components: {
@@ -33,6 +34,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           },
           Anchor: {
             colorText: config.colors.text,
+          },
+          Select: {
+            lineWidth: 2,
           },
         },
       }}
