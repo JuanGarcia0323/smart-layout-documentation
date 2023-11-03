@@ -3,7 +3,7 @@ const options = [...];
 const ExampleSavingLayout = () => {
     const [layoutOptions, setLayoutOptions] = useState<DefaultOptionType[]>(options);
     const [layouts, setLayouts] = useState<{ name: string; layout: string }[]>(layoutExamples);
-    const [layoutSelected, setLayoutSelected] = useState<string>('default');
+    const [layoutSelected, setLayoutSelected] = useState<string>();
     const [showCode, setShowCode] = useState(false);
     const handleNewElement = (name: string) => {
         const currentLayout = localStorage.getItem('example-saving-layout');
@@ -26,7 +26,7 @@ const ExampleSavingLayout = () => {
     return (
       <ComponentLayout
         id="example-saving-layout"
-        layout={layout && ({name: layout.name, layout: JSON.parse(layout.layout)})}> 
+        config={{customLayout:layout && ({name: layout.name,layout: JSON.parse(layout.layout)})}}
                   <div>1</div>
                   <div>2</div>
                   <div>3</div>

@@ -1,4 +1,5 @@
 import SavingLayouts from './SavingLayouts/SavingLayouts';
+import DynamicUnmount from './DynamicUnmount/DynamicUnmount';
 
 const ExamplesSection = () => {
   return (
@@ -40,6 +41,7 @@ const ExamplesSection = () => {
         </p>
       </article>
       <SavingLayouts />
+      <DynamicUnmount />
     </div>
   );
 };

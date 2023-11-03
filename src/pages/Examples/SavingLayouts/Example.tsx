@@ -3,10 +3,7 @@ import { useState } from 'react';
 import CustomComponentLayout from '@components/CustomComponentLayout';
 import ComboBox from '@sp-components/combo-box/combo-box';
 import { DefaultOptionType } from 'antd/es/select';
-import { Tooltip } from 'antd';
-import config from '@config';
-import CodeText from '@components/CodeText';
-import TextExample from './TextExamplet';
+import TextExample from './TextExample';
 
 const layoutExamples = [
   {
@@ -41,8 +38,7 @@ const ExampleSavingLayout = () => {
     useState<DefaultOptionType[]>(options);
   const [layouts, setLayouts] =
     useState<{ name: string; layout: string }[]>(layoutExamples);
-  const [layoutSelected, setLayoutSelected] = useState<string>('default');
-  const [showCode, setShowCode] = useState(false);
+  const [layoutSelected, setLayoutSelected] = useState<string>();
   const handleNewElement = (name: string) => {
     const currentLayout = localStorage.getItem('example-saving-layout');
     if (!currentLayout) {
@@ -62,32 +58,15 @@ const ExampleSavingLayout = () => {
   };
 
   const combo = () => (
-    <>
-      <Tooltip title={`Show code`} color={config.colors.primary}>
-        <button
-          className={`button flex items-center justify-center w-[34.95px] h-[32px]`}
-          onClick={() => setShowCode(!showCode)}
-        >
-          <span
-            className="text-sm"
-            style={{
-              color: showCode ? config.colors.primary : config.colors.text,
-            }}
-          >
-            {showCode ? '</>' : '<>'}
-          </span>
-        </button>
-      </Tooltip>
-      <div className="w-40">
-        <ComboBox
-          options={layoutOptions}
-          className="w-full"
-          onInputChange={handleNewElement}
-          onChange={selectItem}
-          value={layoutSelected}
-        />
-      </div>
-    </>
+    <div className="w-40">
+      <ComboBox
+        options={layoutOptions}
+        className="w-full"
+        onInputChange={handleNewElement}
+        onChange={selectItem}
+        value={layoutSelected}
+      />
+    </div>
   );
   const layout = layouts.find((l) => l.name === layoutSelected);
   return (
@@ -101,35 +80,23 @@ const ExampleSavingLayout = () => {
           layout: JSON.parse(layout.layout),
         } as customLayout)
       }
+      code={TextExample}
     >
-      {showCode ? (
-        <div className="h-full overflow-auto">
-          <CodeText
-            className="p-0 border-0 h-full w-full overflow-y-scroll "
-            split
-          >
-            {TextExample}
-          </CodeText>
-        </div>
-      ) : (
-        [
-          <div className="w-full h-full bg-primary flex items-center justify-center font-bold text-background text-3xl">
-            1
-          </div>,
-          <div className="w-full h-full bg-primary flex items-center justify-center font-bold text-background text-3xl">
-            2
-          </div>,
-          <div className="w-full h-full bg-primary flex items-center justify-center font-bold text-background text-3xl">
-            3
-          </div>,
-          <div className="w-full h-full bg-primary flex items-center justify-center font-bold text-background text-3xl">
-            4
-          </div>,
-          <div className="w-full h-full bg-primary flex items-center justify-center font-bold text-background text-3xl">
-            5
-          </div>,
-        ]
-      )}
+      <div className="w-full h-full bg-primary flex items-center justify-center font-bold text-background text-3xl">
+        1
+      </div>
+      <div className="w-full h-full bg-primary flex items-center justify-center font-bold text-background text-3xl">
+        2
+      </div>
+      <div className="w-full h-full bg-primary flex items-center justify-center font-bold text-background text-3xl">
+        3
+      </div>
+      <div className="w-full h-full bg-primary flex items-center justify-center font-bold text-background text-3xl">
+        4
+      </div>
+      <div className="w-full h-full bg-primary flex items-center justify-center font-bold text-background text-3xl">
+        5
+      </div>
     </CustomComponentLayout>
   );
 };

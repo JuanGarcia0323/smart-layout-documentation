@@ -3,9 +3,9 @@ import Required from '@sp-components/required/Required';
 import { Checkbox as AntCheckBox } from 'antd';
 
 const CheckBox = (props: IPropsCheckBox) => {
-  const { required, className } = props;
+  const { required } = props;
   return (
-    <Required show={required} classNameChildren={className}>
+    <Required show={required}>
       <AntCheckBox {...props} />
     </Required>
   );

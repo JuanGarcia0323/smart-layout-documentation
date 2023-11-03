@@ -1,6 +1,7 @@
 import { ReactNode, useState } from 'react';
 import { ComponentLayout, customLayout } from 'smart-layout';
 import Animation from '@sp-components/animation/Animation';
+import CodeText from './CodeText';
 import {
   ColumnHeightOutlined,
   ColumnWidthOutlined,
@@ -8,24 +9,39 @@ import {
 } from '@ant-design/icons';
 import { Tooltip } from 'antd';
 import config from '@config';
+import { IConfig } from 'smart-layout';
 
 const CustomComponentLayout = ({
   children,
   id,
   layout,
   tools,
+  customConfig,
+  code,
+  className,
+  showCodeOut,
 }: {
   tools?: ReactNode;
   children: ReactNode;
   id: string;
   layout?: customLayout;
+  customConfig?: IConfig;
+  code?: string;
+  className?: string;
+  showCodeOut?: boolean;
 }) => {
-  const savedLayout = localStorage.getItem(id);
   const [showConfig, setShowConfig] = useState(false);
   const [hideMenuBar, setHideMenubar] = useState(false);
   const [limitMovement, setLimitMovement] = useState<
     'horizontal' | 'vertical' | undefined
   >(undefined);
+  const [showCode, setShowCode] = useState(showCodeOut);
+  const configLayout: IConfig = {
+    hideMenubar: hideMenuBar,
+    customLayout: layout,
+    limitMovement: limitMovement,
+    ...customConfig,
+  };
   return (
     <div
       className="w-full h-full flex flex-col gap-2 relative"
@@ -100,17 +116,41 @@ const CustomComponentLayout = ({
               />
             </button>
           </Tooltip>
+          {code && (
+            <Tooltip title={`Show code`} color={config.colors.primary}>
+              <button
+                className={`button flex items-center justify-center w-[34.95px] h-[32px]`}
+                onClick={() => setShowCode(!showCode)}
+              >
+                <span
+                  className="text-sm"
+                  style={{
+                    color: showCode
+                      ? config.colors.primary
+                      : config.colors.text,
+                  }}
+                >
+                  {showCode ? '</>' : '<>'}
+                </span>
+              </button>
+            </Tooltip>
+          )}
           {tools}
         </Animation>
       </div>
-      <div className="w-full h-full border-2 border-primary p-2 bg-background rounded">
-        <ComponentLayout
-          customLayout={!savedLayout ? layout : undefined}
-          hideMenuBar={hideMenuBar}
-          limitMovement={limitMovement}
-          id={id}
-        >
-          {children}
+      <div
+        className={`w-full h-full border-2 border-primary p-2 bg-background rounded ${className}`}
+      >
+        <ComponentLayout config={configLayout} id={id}>
+          {showCode && code ? (
+            <div className="h-full overflow-auto">
+              <CodeText className="p-0 border-0 h-full w-full overflow-y-scroll ">
+                {code}
+              </CodeText>
+            </div>
+          ) : (
+            children
+          )}
         </ComponentLayout>
       </div>
     </div>

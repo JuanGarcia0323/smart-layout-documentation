@@ -30,7 +30,7 @@ const HowTo = () => {
             dynamic, adaptive layouts that react to user interactions in
             real-time.
           </li>
-          <CodeText split>
+          <CodeText>
             {`return (
               <ComponetLayout id="myLayout">
                     <List />
@@ -48,15 +48,27 @@ const HowTo = () => {
             </span>{' '}
             While Smart-layout works wonderfully out of the box, it's fully
             customizable. Adjust settings to fit the unique needs of your
-            project.
+            project passing the prop <CodeText inLineText>config</CodeText>
           </li>
-          <CodeText split>
-            {`{
-              children: ReactNode; // The content to be displayed inside the layout
-              id: string; // The id used to identify it in the DOM and save it on the local-storage
-              hideMenuBar?: boolean; // Whether to hide the menu bar or not
-              limitMovement?: "vertical" | "horizontal" // Limit the selectable positions";
-              }`}
+          <CodeText>
+            {`<ComponentLayout 
+              id="yourId"
+              config={{
+                      disableFullscreen?: boolean // disable the fullscreen button;
+                      disableMove?: boolean // disable the move button;
+                      disableMoveToTheTop?: boolean // disable the move to the top button;
+                      disableClose?: boolean // disable the close button;
+                      onFullScreen?: (element: layoutElement) => void // callback when the fullscreen button is clicked;
+                      onMove?: (element: layoutElement) => void // callback when the move button is clicked;
+                      onMoveToTheTop?: (element: layoutElement) => void // callback when the move to the top button is clicked;
+                      onClose?: (element: layoutElement) => void // callback when the close button is clicked;
+                      hideMenubar?: boolean // hide the menu bar that contains the buttons on each element;
+                      limitMovement?: posibleMovement // limit the movement of the elements to "horizontal" or "vertical;
+                      customLayout?: customLayout // pass a custom layout to the component;
+                      classNameLayoutElement?: string // className for the layout elements;
+                      elementsNames?: string[] | number[] // names that will be mapped to the elements;
+                    }}
+              />`}
           </CodeText>
         </ul>
       </article>

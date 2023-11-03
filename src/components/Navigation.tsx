@@ -19,6 +19,18 @@ const Navigation = () => {
             title: 'Examples',
             key: 'examples',
             href: '#examples',
+            children: [
+              {
+                title: 'Save Layouts',
+                href: '#saving-layout-example',
+                key: 'saving-layout-example',
+              },
+              {
+                title: 'Element Unmount',
+                href: '#dynamic-unmount-layout-example',
+                key: 'dynamic-unmount-layout-example',
+              },
+            ],
           },
         ]}
       />

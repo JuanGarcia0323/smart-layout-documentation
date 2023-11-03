@@ -1,36 +1,31 @@
 const CodeText = ({
   children,
   className,
-  split,
+  inLineText,
 }: {
   children: string;
   className?: string;
-  split?: boolean;
+  inLineText?: boolean;
 }) => {
   return (
-    <code className={`code ${className}`}>
-      {split
-        ? children
-            .trim()
-            .split('\n')
-            .map((element, i) => {
-              const lastElement = children.split('\n').length - 1;
-              console.log('lastElement', lastElement);
-              console.log(i);
-              if (i === 0 || i === lastElement) {
-                console.log(element, i);
-                return <span key={element + i}>{`${element.trim()}`}</span>;
-              }
-              return (
-                <p key={`p-${element}-${i}`}>
-                  {element
-                    .split('  ')
-                    .map((e) => (e === '' ? '-' : ` ${e}`))
-                    .join('')}
-                </p>
-              );
-            })
-        : children}
+    <code className={`code ${className} ${inLineText ? 'p-0 py-1 px-2' : ''}`}>
+      {children
+        .trim()
+        .split('\n')
+        .map((element, i) => {
+          const lastElement = children.split('\n').length - 1;
+          if (i === 0 || i === lastElement) {
+            return <span key={element + i}>{`${element.trim()}`}</span>;
+          }
+          return (
+            <p key={`p-${element}-${i}`}>
+              {element
+                .split('  ')
+                .map((e) => (e === '' ? '-' : ` ${e}`))
+                .join('')}
+            </p>
+          );
+        })}
     </code>
   );
 };
