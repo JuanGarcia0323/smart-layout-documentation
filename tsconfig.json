@@ -27,12 +27,12 @@
       "@sp-pages/*": ["starting-point/pages/*"],
       "@sp-modules/*": ["starting-point/modules/*"],
       "@sp-store/*": ["starting-point/store/*"],
+      "@sp-config": ["starting-point/project.config.ts"],
       "@interfaces": ["interfaces/index.ts"],
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
       "@modules/*": ["modules/*"],
-      "@store": ["store/index.ts"],
-      "@config": ["../project.config.ts"]
+      "@store": ["store/index.ts"]
     }
   },
   "include": ["src", "dev-dist/sw.js", "dev-dist/workbox-5357ef54.js"],

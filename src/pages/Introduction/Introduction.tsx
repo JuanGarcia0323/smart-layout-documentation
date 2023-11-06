@@ -47,7 +47,8 @@ const Introduction = () => {
   return (
     <div className="section" id="introduction">
       <h1 className="title">
-        Welcome to the World of <span className="text-primary"> Smart </span>
+        Welcome <span className="hidden sm:inline">to the World of</span>{' '}
+        <span className="text-primary"> Smart </span>
         Layout
       </h1>
       <article className="flex flex-col gap-2 p-4 text-lg">

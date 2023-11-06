@@ -8,7 +8,9 @@ const CodeText = ({
   inLineText?: boolean;
 }) => {
   return (
-    <code className={`code ${className} ${inLineText ? 'p-0 py-1 px-2' : ''}`}>
+    <code
+      className={`code ${className} ${inLineText ? 'p-0 py-[2px] px-1' : ''}`}
+    >
       {children
         .trim()
         .split('\n')

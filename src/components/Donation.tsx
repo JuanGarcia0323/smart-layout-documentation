@@ -1,11 +1,11 @@
 const Donation = () => {
   return (
     <div className="hidden lg:block h-fit min-w-fit card sticky top-2 border-2 border-primary text-center">
-      <h2 className="font-bold uppercase border-b-2 border-primary font-mono text-base min-w-fit">
+      <h2 className="font-bold uppercase border-b-2 border-primary font-mono  min-w-fit text-sm">
         Give me a hand
       </h2>
-      <div className="w-full flex gap-2 justify-between mt-2">
-        <div className="border-2 w-fit rounded p-2 cursor-pointer border-primary text-primary fill-primary hover:border-green-500 hover:fill-green-500 duration-300 ease-in-out transition-all ">
+      <div className="w-full flex justify-around  mt-2">
+        <div className="border-2 w-fit rounded p-1 cursor-pointer border-primary text-primary fill-primary hover:border-green-500 hover:fill-green-500 duration-300 ease-in-out transition-all ">
           <a
             href="https://www.buymeacoffee.com/juanemilio"
             target="_blank"
@@ -13,8 +13,8 @@ const Donation = () => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="38"
-              height="38"
+              width="25"
+              height="25"
               className="fill-inherit"
               viewBox="0 -960 960 960"
             >
@@ -22,7 +22,7 @@ const Donation = () => {
             </svg>
           </a>
         </div>
-        <div className="border-2 w-fit rounded p-2 cursor-pointer border-primary text-primary fill-primary hover:border-green-500 hover:fill-green-500 duration-300 ease-in-out transition-all ">
+        <div className="border-2 w-fit rounded p-1 cursor-pointer border-primary text-primary fill-primary hover:border-green-500 hover:fill-green-500 duration-300 ease-in-out transition-all ">
           <a
             href="https://matecito.co/JuanEmilio03"
             target="_blank"
@@ -31,8 +31,8 @@ const Donation = () => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="38"
-              height="38"
+              width="25"
+              height="25"
               version="1"
               viewBox="0 0 100 100"
               className="fill-inherit"

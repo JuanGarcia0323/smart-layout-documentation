@@ -6,9 +6,11 @@ import {
   ColumnHeightOutlined,
   ColumnWidthOutlined,
   SettingOutlined,
+  LayoutOutlined,
+  CodeOutlined,
 } from '@ant-design/icons';
 import { Tooltip } from 'antd';
-import config from '@config';
+import config from 'starting-point/project.config';
 import { IConfig } from 'smart-layout';
 
 const CustomComponentLayout = ({
@@ -130,7 +132,7 @@ const CustomComponentLayout = ({
                       : config.colors.text,
                   }}
                 >
-                  {showCode ? '</>' : '<>'}
+                  {showCode ? <LayoutOutlined /> : <CodeOutlined />}
                 </span>
               </button>
             </Tooltip>

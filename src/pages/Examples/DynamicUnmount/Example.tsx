@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import CustomComponentLayout from '@components/CustomComponentLayout';
 import CodeText from '@components/CodeText';
-import config from '@config';
+import config from 'starting-point/project.config';
 import { Tooltip } from 'antd';
 
 const ExampleSavingLayout = () => {

@@ -1,4 +1,4 @@
-import config from './project.config';
+import config from './src/starting-point/project.config';
 
 /** @type {import('tailwindcss').Config} */
 export default {

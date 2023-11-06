@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { stepOne } from './onCloseExample';
 import CustomComponentLayout from '@components/CustomComponentLayout';
 import { Tooltip } from 'antd';
-import config from '@config';
+
+import config from 'starting-point/project.config';
+import { RedoOutlined } from '@ant-design/icons';
 const LayoutExampleOnClosePartTwo = () => {
   const [elements, setElements] = useState([1, 2, 3, 4]);
 
@@ -23,7 +25,7 @@ const LayoutExampleOnClosePartTwo = () => {
               className="button flex items-center justify-center"
               onClick={() => setElements([1, 2, 3, 4])}
             >
-              +
+              <RedoOutlined />
             </button>
           </Tooltip>
         }

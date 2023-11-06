@@ -5,8 +5,8 @@ const ExamplesSection = () => {
   return (
     <div className="section h-auto" id="examples">
       <h1 className="title">
-        <span className="text-primary">Smart</span> layout Examples: Your Guide
-        & Cookbook
+        <span className="text-primary">Smart</span> layout Examples
+        <span className="hidden sm:inline">: Your Guide & Cookbook</span>
       </h1>
       <article className="flex flex-col gap-2 p-4 text-lg">
         <p>
